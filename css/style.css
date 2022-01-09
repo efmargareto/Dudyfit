@@ -1,0 +1,310 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Main styles */
+
+#configuration {
+    position: relative;
+    max-width: 1000px !important;
+    margin: 0 auto;
+    padding: 50px 100px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+    z-index: 3;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid #adabab;
+}
+
+label {
+    font-size: 14px;
+}
+
+.small-input {
+    width: 80px;
+}
+
+.mid-input {
+    width: 120px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+hr {
+    display: block;
+    margin: 0 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+
+.btn-outline-secondary {
+    margin-right: 15px;
+}
+
+a {
+    color: #48505D;
+}
+
+#configuration,
+#result {
+    display: none;
+}
+
+#result {
+    position: relative;
+    margin: 0 auto;
+    padding: 50px 100px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+    z-index: 2;
+}
+
+.activeBlock {
+    display: block !important;
+}
+
+.container {
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background: url(./img/fondoDudyfit.png);
+    background-repeat: no-repeat;
+    background-size: 3000px;
+    background-position: calc(50vw - 1500px - 40px) -460px!important;
+    z-index: -3;
+}
+
+.underlineDudy {
+    position: relative;
+}
+
+.underlineDudy::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 8px;
+    width: 100%;
+    background: #19cdff;
+    z-index: -1;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+a:hover {
+    color: #19cdff !important;
+}
+
+.message-overClients {
+    display: none;
+    margin-top: 20px;
+    color: #19cdff;
+}
+
+#calculate {
+    background: #f89a00;
+    border-color: #f89a00;
+}
+
+
+/* Modal */
+
+.trainer-block_info_input label {
+    margin-right: 5px;
+}
+
+.modal-dialog {
+    max-width: 700px !important;
+}
+
+/* Tab */
+
+.tab-content {
+    padding: 0 35px 35px 35px;
+    border: 1px solid;
+    border-color: #dee2e6;
+    border-top: none;
+}
+
+#nav-entrenadores {
+    flex-wrap: wrap !important;
+}
+
+#validaConjunto {
+    padding: 75px 50px 50px 50px;
+}
+
+#validaConjunto-block {
+    align-items: center;
+}
+
+#indice {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* Card */
+
+.card {
+    width: 30% !important;
+    margin-right: 2.5%;
+    margin-top: 35px;
+}
+
+.card:nth-child(3),
+.card:nth-child(6) {
+    margin-right: 0;
+}
+
+#clientsTable td {
+    text-align: center !important;
+}
+
+.card-body_block img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+
+.card-header_info {
+    width: 25px;
+    height: 25px;
+    background: #000;
+    display: block;
+    border-radius: 100%;
+    background: url('https://img.icons8.com/ios-glyphs/30/000000/info.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal-backdrop {
+    position: absolute;
+    z-index: 99;
+}
+
+.removeZindex {
+    z-index: auto !important;
+}
+
+.card-header_info {
+    position: relative;
+}
+
+.card-header_info div {
+    display: none;
+    width: 122px;
+    position: absolute;
+    top: 33px;
+    left: -88px;
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+    text-align: left;
+    border-radius: 4px;
+    background: black;
+    z-index: 99;
+}
+
+.card-header_info div::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #000;
+    position: absolute;
+    top: -5px;
+    right: 16.5px;
+    transform: rotate(45deg);
+}
+
+#card-header_info1:hover .card-header_info_1,
+#card-header_info2:hover .card-header_info_2, 
+#card-header_info3:hover .card-header_info_3,
+#card-header_info4:hover .card-header_info_4, 
+#card-header_info5:hover .card-header_info_5 {
+    display: block !important;
+}
+
+
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .title {
+        margin-bottom: 0 !important;
+    }
+    .trainer-block_info {
+        flex-wrap: wrap;
+    }
+    .trainer-block_info_input {
+      width: 100%;
+      margin-top: 10px;
+    }
+    input {
+        width: 100% !important;
+    }
+    .btn-outline-secondary {
+        margin-right: 5px;
+    }
+    .trainer-buttons {
+        margin-top: 30px !important;
+    }
+    .card {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    #configuration,
+    #result {
+        padding: 0;
+        box-shadow: none;
+    }
+    #configuration span,
+    #result span {
+        display: inline-block;
+    }
+    body::before {
+        display: none;
+    }
+    #validaConjunto {
+        padding: 20px;
+    }
+    #validaConjunto-block {
+        flex-wrap: wrap;
+    }
+  }
+
