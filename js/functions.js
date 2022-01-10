@@ -127,7 +127,7 @@ DUDYFIT.buttons.closeViewClients.addEventListener('click', () => DUDYFIT.configu
 // --------------------------------------------------------------
 const clientsNoTrainer = () => {
     if( DUDYFIT.clients.length > 0 ) {
-        DUDYFIT.validaConjuntoBlock.style.display = 'block'; 
+        document.querySelector('.message-overClients') = 'block'; 
         document.querySelector('.message-overClients span').innerText = DUDYFIT.clients.length
     }
 }
