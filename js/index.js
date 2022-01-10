@@ -2,9 +2,11 @@
 // Objeto Configuración
 // --------------------------------------------------------------
 
+window.DUDYFIT = {}
 DUDYFIT = {
     trainers: [],
     clients: [],
+    function: {},
     configurationPage: document.querySelector('#configuration'),
     trainersBlock: document.querySelector('#nav-entrenadores-block'),
     indiceBlock: document.querySelector('#indice'),
@@ -25,13 +27,13 @@ DUDYFIT = {
 // --------------------------------------------------------------
 
 DUDYFIT.buttons.calculate.addEventListener('click', () => {
-    DUDYFIT.trainers = getTrainers()
-    DUDYFIT.clients = getClients()
-    asignateClientsToTrainers()
-    changePage()
-    paintTrainers()
-    clientsNoTrainer()
-    calulateIndSatis()
+    DUDYFIT.trainers = DUDYFIT.function.getTrainers()
+    DUDYFIT.clients = DUDYFIT.function.getClients()
+    DUDYFIT.function.asignateClientsToTrainers()
+    DUDYFIT.function.changePage()
+    DUDYFIT.function.paintTrainers()
+    DUDYFIT.function.clientsNoTrainer()
+    DUDYFIT.function.calulateIndSatis()
 })
 
 DUDYFIT.buttons.return.addEventListener('click', () => {

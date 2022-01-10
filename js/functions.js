@@ -1,8 +1,37 @@
 // --------------------------------------------------------------
+// Clases con propiedades: Entrenador y cliente
+// --------------------------------------------------------------
+
+class Trainer {
+    constructor( name, valoration, maxClients ) {
+        this.name = name
+        this.valoration = valoration
+        this.maxClients = maxClients
+        this.clients = []
+    }
+    asignateClients() {
+        if ( this.maxClients > 0 ) {
+            DUDYFIT.clients.forEach( elem => {
+                if( this.maxClients > this.clients.length ) this.clients.push(elem)
+            })
+            return DUDYFIT.clients.splice(0,this.maxClients);
+        }
+    }
+}
+
+class Client {
+    constructor( name, reputacion) {
+        this.name = name
+        this.reputacion = reputacion
+    }
+}
+
+
+// --------------------------------------------------------------
 // Genera los objetos con las propiedades de cada Entrenador
 // --------------------------------------------------------------
 
-const getTrainers = () => {
+DUDYFIT.function.getTrainers = () => {
     let allTrainers = []
     DUDYFIT.selectTrainers.forEach( elem => {
         let name = elem.querySelector('input[name="name"]').value
@@ -21,7 +50,7 @@ const getTrainers = () => {
 // Genera los objetos con las propiedades de cada Cliente
 // --------------------------------------------------------------
 
-const getClients = () => {
+DUDYFIT.function.getClients = () => {
     const selectClients =  document.querySelectorAll('.client')
     let allClients = []
     selectClients.forEach( elem => {
@@ -41,14 +70,14 @@ const getClients = () => {
 // Asignación Entrenador - Cliente
 // --------------------------------------------------------------
 
-const asignateClientsToTrainers = () => DUDYFIT.trainers.forEach( elem => elem.asignateClients())
+DUDYFIT.function.asignateClientsToTrainers = () => DUDYFIT.trainers.forEach( elem => elem.asignateClients())
 
 
 // --------------------------------------------------------------
 // Mostrar / ocultar Páginas
 // --------------------------------------------------------------
 
-const changePage = () => {
+DUDYFIT.function.changePage = () => {
     DUDYFIT.configurationPage.classList.toggle('activeBlock')
     DUDYFIT.buttons.resultPage.classList.toggle('activeBlock')
     DUDYFIT.buttons.return.addEventListener('click', e => {
@@ -62,7 +91,7 @@ const changePage = () => {
 // Pinta Entrenadores con Clientes Asignados
 // --------------------------------------------------------------
 
-const paintTrainers = () => {
+DUDYFIT.function.paintTrainers = () => {
     let sum = 1
     DUDYFIT.trainers.forEach( trainer => {
         let allClients = ''
@@ -105,7 +134,7 @@ const paintTrainers = () => {
 // Indice Satifasción Conjunto
 // --------------------------------------------------------------
 
-const calulateIndSatis = () => {
+DUDYFIT.function.calulateIndSatis = () => {
     let satisfied = 0
     let result;
     DUDYFIT.trainers.forEach( trainer => {
@@ -125,7 +154,8 @@ DUDYFIT.buttons.closeViewClients.addEventListener('click', () => DUDYFIT.configu
 // --------------------------------------------------------------
 // Mesaje Clientes sin entrenador 
 // --------------------------------------------------------------
-const clientsNoTrainer = () => {
+
+DUDYFIT.function.clientsNoTrainer = () => {
     if( DUDYFIT.clients.length > 0 ) {
         document.querySelector('.message-overClients').style.display = 'block'; 
         document.querySelector('.message-overClients span').innerText = DUDYFIT.clients.length
